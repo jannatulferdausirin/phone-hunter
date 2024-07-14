@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Hunter With API</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="my-8 text-3xl font-bold text-center">
+      <h1>Phone Hunter With Api</h1>
+    </header>
+    <main>
+      <section class="w-[1400px] mx-auto">
+        <!-- search here-->
+        <input
+          id="search-field"
+          type="text"
+          placeholder="search here..."
+          class="w-full max-w-xs input input-bordered"
+        />
+        <button onclick="handleSearchButton()" class="btn btn-secondary">
+          search
+        </button>
+
+        <!-- search result -->
+        <!-- loading -->
+        <div id="loading" class="hidden my-40">
+          <span class="loading loading-spinner loading-lg"></span>
+        </div>
+        <div
+          id="phone-container"
+          class="grid gap-8 my-4 md:grid-cols-2 lg:grid-cols-3"
+        ></div>
+        <!-- btn show all -->
+        <div
+          onclick="handleShowAll()"
+          id="show-all"
+          class="hidden my-8 text-center"
+        >
+          <button class="btn btn-active btn-secondary">Show All</button>
+        </div>
+
+        <!-- Open the modal using ID.showModal() method -->
+
+        <dialog id="my_show_modal" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <h3 id="phone-name" class="text-lg font-bold"></h3>
+           <div id="show-detail-container">
+            
+           </div>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </section>
+    </main>
+    <footer></footer>
+
+    <script src="js/Phone.js"></script>
+  </body>
+</html>
